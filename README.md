@@ -1,2 +1,2 @@
 # DSA_Assignment
-An assignment given by my teacher Bipesh Subedi.
+An assignment given by my DSA professor, sir Bipesh Subedi.

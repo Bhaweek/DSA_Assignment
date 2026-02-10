@@ -35,6 +35,7 @@ void bfs(int start) {
 
 
 void dfs(int v) {
+	int i;
     visited[v] = 1;
     printf("%d ", v);
 
@@ -46,7 +47,7 @@ void dfs(int v) {
 }
 
 int main() {
-    int edges, u, v;
+    int edges, u, v, i, j;
 
     printf("Enter number of vertices: ");
     scanf("%d", &n);

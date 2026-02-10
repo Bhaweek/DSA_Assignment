@@ -33,7 +33,6 @@ void bfs(int start) {
     printf("\n");
 }
 
-
 void dfs(int v) {
 	int i;
     visited[v] = 1;

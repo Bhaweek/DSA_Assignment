@@ -36,8 +36,9 @@ char pop()
 int balance(char exp[])
 {
     top = -1;
+    int i;
 
-    for (int i = 0; i < strlen(exp); i++)
+    for (i = 0; i < strlen(exp); i++)
     {
         char ch = exp[i];
 

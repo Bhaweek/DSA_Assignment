@@ -6,15 +6,17 @@ long long comp = 0, swap = 0;
 
 /* Print array */
 void print(int a[], int n) {
-    for (int i = 0; i < n; i++)
+	int i;
+    for (i = 0; i < n; i++)
         printf("%d ", a[i]);
     printf("\n");
 }
 
 /* Bubble Sort */
 void bubble(int a[], int n) {
-    for (int i = 0; i < n - 1; i++)
-        for (int j = 0; j < n - i - 1; j++) {
+	int i, j;
+    for (i = 0; i < n - 1; i++)
+        for (j = 0; j < n - i - 1; j++) {
             comp++;
             if (a[j] > a[j + 1]) {
                 int t = a[j]; a[j] = a[j + 1]; a[j + 1] = t;
@@ -25,9 +27,10 @@ void bubble(int a[], int n) {
 
 /* Selection Sort */
 void selection(int a[], int n) {
-    for (int i = 0; i < n - 1; i++) {
+	int i, j;
+    for (i = 0; i < n - 1; i++) {
         int min = i;
-        for (int j = i + 1; j < n; j++) {
+        for (j = i + 1; j < n; j++) {
             comp++;
             if (a[j] < a[min]) min = j;
         }
@@ -40,7 +43,8 @@ void selection(int a[], int n) {
 
 /* Insertion Sort */
 void insertion(int a[], int n) {
-    for (int i = 1; i < n; i++) {
+	int i;
+    for (i = 1; i < n; i++) {
         int key = a[i], j = i - 1;
         while (j >= 0 && (++comp && a[j] > key)) {
             a[j + 1] = a[j];
@@ -74,14 +78,14 @@ void mergeSort(int a[], int l, int r) {
 }
 
 int main() {
-    int n, ch;
+    int n, ch, i;
     printf("Enter number of elements: ");
     scanf("%d", &n);
 
     int a[n];
     srand(time(NULL));
 
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
         a[i] = rand() % 1000 + 1;
 
     printf("\nBefore sorting:\n");

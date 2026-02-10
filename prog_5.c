@@ -9,8 +9,9 @@ int n;
 
 void bfs(int start) {
     int queue[MAX], front = 0, rear = -1;
+    int i, j;
     
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
         visited[i] = 0;
 
     visited[start] = 1;
@@ -22,7 +23,7 @@ void bfs(int start) {
         int v = queue[front++];
         printf("%d ", v);
 
-        for (int i = 0; i < n; i++) {
+        for (i = 0; i < n; i++) {
             if (adj[v][i] == 1 && visited[i] == 0) {
                 visited[i] = 1;
                 queue[++rear] = i;
@@ -37,7 +38,7 @@ void dfs(int v) {
     visited[v] = 1;
     printf("%d ", v);
 
-    for (int i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
         if (adj[v][i] == 1 && visited[i] == 0) {
             dfs(i);
         }
@@ -54,12 +55,12 @@ int main() {
     scanf("%d", &edges);
 
     //Initialize adjacency matrix
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < n; j++)
+    for (i = 0; i < n; i++)
+        for (j = 0; j < n; j++)
             adj[i][j] = 0;
 
     //Read edges
-    for (int i = 0; i < edges; i++) {
+    for (i = 0; i < edges; i++) {
         printf("Enter edge (u v): ");
         scanf("%d %d", &u, &v);
         adj[u][v] = 1;
@@ -68,7 +69,7 @@ int main() {
 
     bfs(0);
 
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
         visited[i] = 0;
 
     printf("DFS Traversal: ");
